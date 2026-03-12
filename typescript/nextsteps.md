@@ -1,0 +1,4 @@
+- Refactor existing tests
+- Generate tests with Claude?
+- Text tests for the printer
+- Start refactor
