@@ -197,6 +197,33 @@ describe('Supermarket', () => {
         ];
         assertReceiptHasItems(receipt, expectedItems);
     });
+    it('Five for amount X2', () => {
+        // ARRANGE
+        const teller: Teller = new Teller(catalogWithProducts);
+        teller.addSpecialOffer(SpecialOfferType.FiveForAmount, toothbrush, 1.50);
+
+        const cart: ShoppingCart = new ShoppingCart();
+        cart.addItemQuantity(toothbrush, 10);
+
+        // ACT
+        const receipt: Receipt = teller.checksOutArticlesFrom(cart);
+
+        // ASSERT
+        assertTotalPrice(receipt, 3);
+        assertHasAmountOfDiscounts(receipt, 1);
+
+        assertDiscountDescriptionWithAmount(receipt, "5 for 1.5", 9.9 - 3);
+
+        const expectedItems = [
+            {
+                product: toothbrush,
+                price: 0.99,
+                totalPrice: 10*0.99,
+                quantity: 10
+            }
+        ];
+        assertReceiptHasItems(receipt, expectedItems);
+    });
     it('Two for amount buy seven', () => {
        // ARRANGE
         const teller: Teller = new Teller(catalogWithProducts);

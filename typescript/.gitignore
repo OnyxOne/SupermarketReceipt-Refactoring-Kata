@@ -4,3 +4,6 @@ package-lock.json
 *.js
 
 *.received.*
+
+# stryker temp files
+.stryker-tmp

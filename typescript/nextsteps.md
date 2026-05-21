@@ -1,6 +1,6 @@
 - [x] Refactor existing tests
 - [x] Generate tests with Claude?
-- [ ] Try to add mutation tests: https://stryker-mutator.io
+- [x] Try to add mutation tests: https://stryker-mutator.io
 - [ ] text tests? or data generators?
 - [ ] Text tests for the printer
 - [ ] Start refactor
